@@ -1,0 +1,13 @@
+给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和。
+The number one:
+    class Solution:
+    def addStrings(self, num1: str, num2: str) -> str:
+        count1 , count2 = 0 , 0
+        nul1 , nul2 = 1 , 1
+        for i in num1:
+            count1 += int(i) * (10**(len(num1)-nul1))
+            nul1 += 1
+        for j in num2:
+            count2 += int(j) * (10**(len(num2)-nul2))
+            nul2 += 1
+        return str(count1+count2)
