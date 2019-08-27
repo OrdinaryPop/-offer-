@@ -1,0 +1,24 @@
+给定两个以字符串形式表示的非负整数 num1 和 num2，返回 num1 和 num2 的乘积，它们的乘积也表示为字符串形式。
+
+示例 1:
+
+输入: num1 = "2", num2 = "3"
+输出: "6"
+示例 2:
+
+输入: num1 = "123", num2 = "456"
+输出: "56088"
+
+The number one:
+    class Solution:
+    def multiply(self, num1: str, num2: str) -> str:
+        count1 , count2 = 0 , 0
+        mul1 , mul2 = 1 , 1
+        for i in num1:
+            count1 += int(i) * (10**(len(num1)-mul1))
+            mul1 += 1
+        for j in num2:
+            count2 += int(j) * (10**(len(num2)-mul2))
+            mul2 += 1
+        return str(count1*count2)
+        
